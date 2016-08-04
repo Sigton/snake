@@ -33,22 +33,32 @@ class Snake(pygame.sprite.Sprite):
 
         ''' Constructor '''
 
-        # Call the parents constructor
+        # Call the parents constructor.
         pygame.sprite.Sprite.__init__(self)
 
-        self.snake = [ # A list of the where the snake is
+        self.snake = [ # A list of the where the snake is.
             {"x":4,"y":4},
             {"x":3,"y":4},
             {"x":2,"y":4}
             ]
 
+        # Where the snake is pointing
+        self.direction = 1 # 0=up,1=right,2=down,3=left.
+
+        # A list of game sprites that form the snake.    
         self.snakeSegments = []
 
         for segment in snake:
             newSegment = GameSprite(36,36,(0,255,0))
             self.snakeSegments.append(newSegment)
 
+    def move_next(self):
+
+        ''' Moves the snake to the next position on the board '''
+
 def main():
+
+    pygame.init()
 
     display = (480,360)
 
@@ -71,4 +81,10 @@ def main():
 
         pygame.display.update()
         clock.tick(30)
+
+    pygame.quit()
+    quit()
+
+if __name__ == '__main__':
+    main()
             
