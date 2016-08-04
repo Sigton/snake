@@ -54,4 +54,21 @@ def main():
 
     gameDisplay = pygame.display.set_mode(display)
     pygame.display.set_caption("Snake")
+
+    clock = pygame.time.Clock()
+
+    snake = Snake
+
+    gameExit = False
+
+    while not gameExit:
+        # Events loop
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                gameExit = True
+
+        gameDisplay.fill((0,0,0))
+
+        pygame.display.update()
+        clock.tick(30)
             
