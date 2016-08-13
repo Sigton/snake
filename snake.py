@@ -43,7 +43,7 @@ class Snake(pygame.sprite.Sprite):
             ]
 
         # Where the snake is pointing
-        self.direction = 1 # 0=up,1=right,2=down,3=left.
+        self.direction = "R"
 
         # A list of game sprites that form the snake.    
         self.snakeSegments = []
@@ -55,6 +55,23 @@ class Snake(pygame.sprite.Sprite):
     def move_next(self):
 
         ''' Moves the snake to the next position on the board '''
+
+        if self.direction == "R":
+            # Move right
+            newX = self.snake[0]["x"] + 1
+            newY = self.snake[0]["y"]
+
+        elif self.direction == "L":
+            # Move left
+            pass
+
+        elif self.direction == "U":
+            # Move up
+            pass
+        
+        elif self.direction == "D":
+            # Move down
+            pass
 
 def main():
 
