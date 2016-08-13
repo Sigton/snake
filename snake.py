@@ -63,15 +63,18 @@ class Snake(pygame.sprite.Sprite):
 
         elif self.direction == "L":
             # Move left
-            pass
+            newX = self.snake[0]["x"] - 1
+            newY = self.snake[0]["y"]
 
         elif self.direction == "U":
             # Move up
-            pass
+            newX = self.snake[0]["x"]
+            newY = self.snake[0]["y"] - 1
         
         elif self.direction == "D":
             # Move down
-            pass
+            newX = self.snake[0]["x"]
+            newY = self.snake[0]["y"] + 1
 
 def main():
 
@@ -84,7 +87,7 @@ def main():
 
     clock = pygame.time.Clock()
 
-    snake = Snake
+    snake = Snake()
 
     gameExit = False
 
