@@ -46,11 +46,11 @@ class Snake(pygame.sprite.Sprite):
         self.direction = "R"
 
         # A list of game sprites that form the snake.    
-        self.snakeSegments = []
+        self.snakeSegments = pygame.sprite.Group()
 
         for segment in snake:
             newSegment = GameSprite(36,36,(0,255,0))
-            self.snakeSegments.append(newSegment)
+            self.snakeSegments.add(newSegment)
 
     def move_next(self):
 
@@ -76,6 +76,8 @@ class Snake(pygame.sprite.Sprite):
             newX = self.snake[0]["x"]
             newY = self.snake[0]["y"] + 1
 
+        
+
 def main():
 
     pygame.init()
@@ -96,6 +98,8 @@ def main():
         for event in pygame.event.get():
             if event.type == QUIT:
                 gameExit = True
+
+        snake.moveNext
 
         gameDisplay.fill((0,0,0))
 
